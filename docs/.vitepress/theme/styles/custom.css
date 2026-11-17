@@ -169,6 +169,20 @@
   overflow-x: auto;
 }
 
+/* 全局表格防溢出保护：在所有视口（包括桌面端三栏布局与移动端）下，超宽表格一律在区域内平滑滚动，杜绝与右侧目录(TOC)发生任何碰撞与页面横向滚动 */
+.vp-doc table {
+  display: block;
+  max-width: 100% !important;
+  overflow-x: auto;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+.vp-doc th,
+.vp-doc td {
+  white-space: nowrap;
+}
+
 /* 移动端排版优化 */
 @media (max-width: 768px) {
   .vp-doc h1 {
@@ -180,10 +194,5 @@
   .vp-doc {
     font-size: 16px;
     line-height: 1.75;
-  }
-  .vp-doc table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
   }
 }
