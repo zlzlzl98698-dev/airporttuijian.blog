@@ -90,6 +90,7 @@ const props = withDefaults(
 
 <style scoped>
 .topology-panel {
+  container-type: inline-size;
   background-color: var(--obs-bg);
   border: 1px solid var(--obs-border);
   border-radius: 10px;
@@ -97,6 +98,9 @@ const props = withDefaults(
   color: var(--obs-text-bright);
   margin: 1.8rem 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .topology-header {
@@ -136,9 +140,11 @@ const props = withDefaults(
   gap: 12px;
   align-items: center;
   padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media (min-width: 1100px) {
+@container (min-width: 780px) {
   .topology-canvas {
     flex-direction: row;
     justify-content: space-between;
@@ -153,14 +159,15 @@ const props = withDefaults(
   padding: 12px 14px;
   text-align: center;
   width: 100%;
-  max-width: 260px;
+  max-width: 280px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
 }
 
-@media (min-width: 1100px) {
+@container (min-width: 780px) {
   .topo-node {
     max-width: 155px;
     flex-shrink: 0;
@@ -208,7 +215,7 @@ const props = withDefaults(
   background-color: #334155;
 }
 
-@media (min-width: 1100px) {
+@container (min-width: 780px) {
   .line-dot {
     width: 20px;
     height: 2px;
@@ -218,13 +225,14 @@ const props = withDefaults(
 .tunnel-connector {
   flex: 1 1 auto;
   width: 100%;
-  max-width: 260px;
+  max-width: 280px;
+  box-sizing: border-box;
   padding: 0 10px;
 }
 
-@media (min-width: 1100px) {
+@container (min-width: 780px) {
   .tunnel-connector {
-    min-width: 130px;
+    min-width: 120px;
     max-width: 210px;
   }
 }
