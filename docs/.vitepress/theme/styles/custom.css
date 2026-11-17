@@ -1,0 +1,179 @@
+/**
+ * 自定义组件与拓展排版样式
+ */
+
+/* 顶部与全局样式微调 */
+.VPNavBarTitle .title {
+  font-weight: 700 !important;
+  color: #1e3a8a !important;
+}
+
+/* 声明提醒条 */
+.disclaimer-banner {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #475569;
+  margin: 1.5rem 0;
+  line-height: 1.6;
+}
+
+/* 步骤指南容器 */
+.step-guide-container {
+  margin: 1.8rem 0;
+}
+
+.step-card {
+  position: relative;
+  padding: 18px 20px 18px 56px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.step-number {
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  width: 28px;
+  height: 28px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.step-title {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.step-body {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.65;
+}
+
+/* 状态标签样式 */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.badge-operational {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-partial {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-untested {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.badge-vendor {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+/* 商业转化CTA按钮与卡片 */
+.brand-cta-block {
+  margin: 2rem 0;
+  padding: 24px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brand-cta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand-cta-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.brand-cta-desc {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.brand-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  background: #2563eb;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
+  cursor: pointer;
+  width: fit-content;
+}
+
+.brand-cta-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.35);
+}
+
+.brand-cta-disclosure {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* 移动端排版优化 */
+@media (max-width: 768px) {
+  .vp-doc h1 {
+    font-size: 1.7rem;
+  }
+  .vp-doc h2 {
+    font-size: 1.35rem;
+  }
+  .vp-doc {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

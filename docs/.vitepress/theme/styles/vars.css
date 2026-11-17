@@ -1,0 +1,114 @@
+/**
+ * 网站全局设计规范与 CSS Variables
+ * Professional Documentation + Technical Knowledge Base + Modern Editorial Design
+ */
+
+:root {
+  /* 基础主色调 */
+  --vp-c-brand-1: #2563eb;
+  --vp-c-brand-2: #1d4ed8;
+  --vp-c-brand-3: #1e40af;
+  --vp-c-brand-soft: #eff6ff;
+
+  /* 背景色 */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f8fafc;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #f1f5f9;
+
+  /* 文字颜色 */
+  --vp-c-text-1: #0f172a;
+  --vp-c-text-2: #334155;
+  --vp-c-text-3: #64748b;
+
+  /* 边框与分割线 */
+  --vp-c-border: #e2e8f0;
+  --vp-c-divider: #f1f5f9;
+  --vp-c-gutter: #e2e8f0;
+
+  /* 字体与排版 */
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* 阴影 */
+  --vp-shadow-1: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  --vp-shadow-2: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --vp-shadow-3: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+
+  /* 文档正文字号与行高 */
+  --vp-doc-font-size: 17.5px;
+  --vp-doc-line-height: 1.82;
+
+  /* 网络可观测性深色仪表盘变量 */
+  --obs-bg: #090d16;
+  --obs-card-bg: #0f172a;
+  --obs-border: #1e293b;
+  --obs-text-bright: #f8fafc;
+  --obs-text-muted: #94a3b8;
+  --obs-accent: #38bdf8;
+  --obs-success: #10b981;
+  --obs-warning: #f59e0b;
+  --obs-danger: #ef4444;
+}
+
+/* 正文中文阅读优化 */
+.vp-doc p,
+.vp-doc li {
+  letter-spacing: 0.015em;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.vp-doc h2 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 2.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+.vp-doc h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 1.8rem;
+}
+
+/* 优质表格排版 */
+.vp-doc table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--vp-shadow-1);
+}
+
+.vp-doc th {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.vp-doc td {
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 15.5px;
+}
+
+.vp-doc tr:nth-child(even) {
+  background-color: #f8fafc;
+}
