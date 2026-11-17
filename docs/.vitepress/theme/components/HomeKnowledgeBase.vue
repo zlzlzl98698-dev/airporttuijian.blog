@@ -1,14 +1,61 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { brandsData } from '../../data/brands'
 import { clientsData } from '../../data/clients'
+import { affiliateLinks } from '../../data/links'
 import NetworkPerformanceReport from './NetworkPerformanceReport.vue'
 import StreamingAvailabilityMatrix from './StreamingAvailabilityMatrix.vue'
 import NetworkTopology from './NetworkTopology.vue'
 import CustomFooter from './CustomFooter.vue'
 
-// 推荐前 4 家综合表现优质品牌
-const topBrands = brandsData.slice(0, 4)
+// 品牌矩阵筛选与搜索状态
+const brandFilter = ref('all')
+const brandSearch = ref('')
+
+// 动态统计各分类数量
+const filterCounts = computed(() => {
+  return {
+    all: brandsData.length,
+    iepl: brandsData.filter(b => b.lineType.includes('专线') || b.lineType.includes('IEPL') || b.lineType.includes('IPLC')).length,
+    budget: brandsData.filter(b => b.entryPrice <= 10).length,
+    premium: brandsData.filter(b => b.entryPrice >= 20).length,
+    unlimited: brandsData.filter(b => b.billingType.includes('不限时') || b.summary.includes('不过期')).length
+  }
+})
+
+// 计算全景品牌矩阵展示列表
+const displayBrands = computed(() => {
+  return brandsData.filter(brand => {
+    // 关键词即时匹配
+    if (brandSearch.value.trim()) {
+      const q = brandSearch.value.trim().toLowerCase()
+      const match = brand.name.toLowerCase().includes(q) ||
+                    brand.englishName.toLowerCase().includes(q) ||
+                    brand.lineType.toLowerCase().includes(q) ||
+                    brand.protocols.some(p => p.toLowerCase().includes(q))
+      if (!match) return false
+    }
+
+    // 分类筛选
+    if (brandFilter.value === 'iepl') {
+      return brand.lineType.includes('专线') || brand.lineType.includes('IEPL') || brand.lineType.includes('IPLC')
+    }
+    if (brandFilter.value === 'budget') {
+      return brand.entryPrice <= 10
+    }
+    if (brandFilter.value === 'premium') {
+      return brand.entryPrice >= 20
+    }
+    if (brandFilter.value === 'unlimited') {
+      return brand.billingType.includes('不限时') || brand.summary.includes('不过期')
+    }
+    return true
+  })
+})
+
+const getBrandAffLink = (id: string) => {
+  return affiliateLinks[id]?.url || '#'
+}
 </script>
 
 <template>
@@ -263,25 +310,87 @@ const topBrands = brandsData.slice(0, 4)
       </div>
     </section>
 
-    <!-- 6. 优质品牌精选与评测入口 -->
+    <!-- 6. 31 家梯子品牌全景评测矩阵 -->
     <section class="kb-section brands-section">
       <div class="section-container">
         <div class="section-heading">
-          <span class="sub-label">CURATED PROVIDERS</span>
-          <h2 class="section-title">推荐梯子品牌综合榜单</h2>
-          <p class="section-subtitle">从 31 家审计品牌中严格筛选出的前列推荐方案</p>
+          <span class="sub-label">FULL PROVIDER MATRIX</span>
+          <h2 class="section-title">31 家机场品牌全景评测矩阵</h2>
+          <p class="section-subtitle">全量呈现 31 家严格审计品牌，客观公开协议、线路、价格与优惠码，支持即时分类筛选与搜索</p>
         </div>
 
+        <!-- 矩阵快速分类切换与搜索 -->
+        <div class="matrix-filter-bar">
+          <div class="filter-tabs">
+            <button
+              :class="['filter-tab', { active: brandFilter === 'all' }]"
+              @click="brandFilter = 'all'"
+            >
+              全部品牌 ({{ filterCounts.all }})
+            </button>
+            <button
+              :class="['filter-tab', { active: brandFilter === 'iepl' }]"
+              @click="brandFilter = 'iepl'"
+            >
+              ⚡ 专线高速 ({{ filterCounts.iepl }})
+            </button>
+            <button
+              :class="['filter-tab', { active: brandFilter === 'budget' }]"
+              @click="brandFilter = 'budget'"
+            >
+              💰 10元以内平价 ({{ filterCounts.budget }})
+            </button>
+            <button
+              :class="['filter-tab', { active: brandFilter === 'premium' }]"
+              @click="brandFilter = 'premium'"
+            >
+              🛡️ 旗舰高防 ({{ filterCounts.premium }})
+            </button>
+            <button
+              :class="['filter-tab', { active: brandFilter === 'unlimited' }]"
+              @click="brandFilter = 'unlimited'"
+            >
+              ⏳ 不限时/按量 ({{ filterCounts.unlimited }})
+            </button>
+          </div>
+
+          <div class="filter-search-box">
+            <span class="search-icon">🔍</span>
+            <input
+              v-model="brandSearch"
+              type="text"
+              placeholder="搜索品牌名、协议或线路..."
+              class="matrix-search-input"
+            />
+            <button
+              v-if="brandSearch"
+              class="search-clear-btn"
+              @click="brandSearch = ''"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- 全景品牌矩阵卡片网格（全量 31 家品牌直接呈现） -->
         <div class="home-brands-grid">
           <div
-            v-for="brand in topBrands"
+            v-for="brand in displayBrands"
             :key="brand.id"
-            class="home-brand-card"
+            :class="['home-brand-card', { 'promoted-card': brand.isPromoted }]"
           >
             <div class="hb-header">
-              <span class="hb-rank">#{{ brand.rank }}</span>
-              <div>
-                <h4 class="hb-name">{{ brand.name }}</h4>
+              <span :class="['hb-rank', { 'rank-gold': brand.rank === 1, 'rank-silver': brand.rank === 2, 'rank-bronze': brand.rank === 3 }]">
+                <template v-if="brand.rank === 1">👑 #1 首推</template>
+                <template v-else-if="brand.rank === 2">🥈 #2</template>
+                <template v-else-if="brand.rank === 3">🥉 #3</template>
+                <template v-else>#{{ brand.rank }}</template>
+              </span>
+              <div class="hb-title-wrap">
+                <div class="hb-name-row">
+                  <h4 class="hb-name">{{ brand.name }}</h4>
+                  <span class="hb-en-name">{{ brand.englishName }}</span>
+                </div>
                 <span class="hb-type">{{ brand.lineType }}</span>
               </div>
             </div>
@@ -293,16 +402,32 @@ const topBrands = brandsData.slice(0, 4)
 
             <p class="hb-summary">{{ brand.summary }}</p>
 
+            <div class="hb-meta-row">
+              <span class="hb-proto">{{ brand.protocols.join(' / ') }}</span>
+              <span v-if="brand.since" class="hb-since">{{ brand.since }}年运营</span>
+            </div>
+
             <div class="hb-footer">
-              <a :href="brand.reviewPath" class="hb-review-link">查看评测详情</a>
-              <a :href="`/brands/`" class="hb-btn">品牌详情</a>
+              <a :href="brand.reviewPath" class="hb-review-link">查看评测详情 →</a>
+              <a
+                :href="getBrandAffLink(brand.id)"
+                target="_blank"
+                rel="nofollow sponsored noopener"
+                class="hb-aff-btn"
+              >
+                直达官网 ↗
+              </a>
             </div>
           </div>
         </div>
 
+        <div v-if="displayBrands.length === 0" class="empty-matrix-tip">
+          <p>未找到匹配「{{ brandSearch }}」的品牌，请尝试其他关键词或清空搜索条件。</p>
+        </div>
+
         <div class="brands-cta-row">
           <a href="/brands/" class="all-brands-btn">
-            进入完整 31 家机场品牌数据库（支持按线路与价格多维筛选） →
+            进入高级品牌数据库（支持 10+ 维度深度筛选与横向比对） →
           </a>
         </div>
       </div>
@@ -562,6 +687,7 @@ const topBrands = brandsData.slice(0, 4)
   margin: 6px 0 10px 0;
   border: none;
   padding: 0;
+  line-height: 1.35;
 }
 
 .section-subtitle {
@@ -774,10 +900,96 @@ const topBrands = brandsData.slice(0, 4)
   font-weight: 600;
 }
 
+/* Matrix Filter Bar */
+.matrix-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+  background: #f8fafc;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-tab {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.filter-tab.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.filter-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 260px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 13px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.matrix-search-input {
+  width: 100%;
+  padding: 7px 28px 7px 32px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #ffffff;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.matrix-search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 12px;
+}
+
 /* Home Brands */
 .home-brands-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 18px;
   margin-bottom: 24px;
 }
@@ -786,26 +998,72 @@ const topBrands = brandsData.slice(0, 4)
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  padding: 20px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.home-brand-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+}
+
+.promoted-card {
+  border-color: #3b82f6 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
 }
 
 .hb-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .hb-rank {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 800;
   color: #2563eb;
   font-family: var(--vp-font-family-mono);
   background: #eff6ff;
   padding: 3px 8px;
   border-radius: 6px;
+  white-space: nowrap;
+}
+
+.rank-gold {
+  background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+  color: #b45309 !important;
+  border: 1px solid #fcd34d;
+}
+
+.rank-silver {
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0) !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1;
+}
+
+.rank-bronze {
+  background: linear-gradient(135deg, #ffedd5, #fed7aa) !important;
+  color: #c2410c !important;
+  border: 1px solid #fdba74;
+}
+
+.hb-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.hb-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .hb-name {
@@ -817,9 +1075,15 @@ const topBrands = brandsData.slice(0, 4)
   padding: 0 !important;
 }
 
+.hb-en-name {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
 .hb-type {
   font-size: 11.5px;
   color: #64748b;
+  line-height: 1.4;
 }
 
 .hb-price-line {
@@ -827,6 +1091,8 @@ const topBrands = brandsData.slice(0, 4)
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .hb-price {
@@ -837,19 +1103,43 @@ const topBrands = brandsData.slice(0, 4)
 }
 
 .hb-coupon {
-  font-size: 11.5px;
+  font-size: 11px;
   color: #d97706;
   background: #fef3c7;
   padding: 1px 6px;
   border-radius: 4px;
+  font-weight: 600;
 }
 
 .hb-summary {
-  font-size: 13.5px;
+  font-size: 13px;
   color: #475569;
   line-height: 1.6;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   flex: 1;
+}
+
+.hb-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 12px;
+  padding-top: 8px;
+  border-top: 1px dashed #f1f5f9;
+}
+
+.hb-proto {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--vp-font-family-mono);
+  color: #334155;
+}
+
+.hb-since {
+  color: #94a3b8;
 }
 
 .hb-footer {
@@ -861,19 +1151,40 @@ const topBrands = brandsData.slice(0, 4)
 }
 
 .hb-review-link {
-  font-size: 13px;
+  font-size: 12.5px;
   color: #2563eb;
   font-weight: 600;
   text-decoration: none;
 }
 
-.hb-btn {
+.hb-review-link:hover {
+  text-decoration: underline;
+}
+
+.hb-aff-btn {
   font-size: 12px;
-  background-color: #f1f5f9;
-  color: #334155 !important;
-  padding: 4px 10px;
-  border-radius: 4px;
+  background-color: #2563eb;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 5px;
   text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+
+.hb-aff-btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.empty-matrix-tip {
+  text-align: center;
+  padding: 36px 16px;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 24px;
 }
 
 .brands-cta-row {
