@@ -1,0 +1,20 @@
+Entity_Name,Entity_Type,Parent_Entity,Associated_Protocols,Target_Use_Case,Target_Regions,Related_Brands,Confidence_Score,Verification_Source
+光速云,NetworkProvider,IEPL_Service,"VLESS, Trojan",企业办公/4K流媒体/AI对话,"HK, JP, SG, US, TW",guangsuyun,1.0,官方套餐与非晚高峰实测数据
+飞猫云,NetworkProvider,Dedicated_Tunnel,"VLESS, Proprietary",新手一键连接/轻度视频,"HK, JP, SG, US",feimao,0.95,官方客户端与实测报告
+微风网络,NetworkProvider,IEPL_Service,VLESS,性价比日常/AI办公,"HK, SG, JP, US",weifeng,0.95,官方套餐表与基准实测
+暮光加速,NetworkProvider,BGP_Transit,"VLESS, Trojan",多设备协同/外贸团队,"HK, TW, SG, JP, US",muguang,0.95,官方套餐与客服政策
+星岛梦,NetworkProvider,IEPL_Service,Trojan,多设备不限连/跨区流媒体,"HK, TW, JP, US, SG, KR",xingdaomeng,0.95,2020老牌运营记录
+二猫云,NetworkProvider,IEPL_Service,VLESS,长期稳定出海/多端在线,"HK, JP, US, SG",ermao,0.92,海外技术团队资料
+唯兔云,NetworkProvider,IPLC_Service,Trojan,晚高峰防QoS/全流媒体,"HK, TW, SG, JP, US",weitu,0.92,官方套餐与IPLC实测
+Firefly,NetworkProvider,IPLC_Service,VLESS,高带宽下载/晚高峰追剧,"HK, SG, JP, US",firefly,0.90,IPLC专线资料
+梯子云,NetworkProvider,IEPL_Service,VLESS,双模客户端/新手兼极客,"HK, JP, SG, US, TW",tiziyun,0.90,2025新品牌资料
+隐形人,NetworkProvider,IPLC_Service,Proprietary,企业专线直连/专属App,"HK, JP, US, SG, TW",yinxingren,0.85,官方宣传条款(标注vendor)
+大佬云,NetworkProvider,IEPL_Service,VLESS,极限平价/轻量备用,"HK, JP, SG, US",dalaoyun,0.90,5.6元标准方案
+Clash Verge Rev,SoftwareClient,ProxyEngine,"Mihomo, Meta",全平台分流控制/TUN模式,"Win, Mac, Linux",All,1.0,GitHub开源项目仓库
+v2rayN,SoftwareClient,ProxyEngine,"Xray, sing-box",多核心节点管理/批量测速,Windows,All,1.0,GitHub开源项目仓库
+Shadowrocket,SoftwareClient,ProxyEngine,Proprietary,iOS轻量按需代理/分流,iOS,All,1.0,App Store官方资料
+OpenClash,SoftwareClient,TransparentProxy,Mihomo,全屋透明代理/Fake-IP防污染,OpenWrt,All,1.0,GitHub开源仓库
+IEPL,NetworkArchitecture,PrivateLine,Layer2_Ethernet,跨境物理专线/0丢包,Global,All,1.0,电信运营商网络工程白皮书
+IPLC,NetworkArchitecture,PrivateLine,Layer1_TDM,点对点物理光纤/极低抖动,Global,All,1.0,国际电信联盟标准
+TUN_Mode,NetworkFeature,VirtualInterface,Layer3_IP,接管整机流量/游戏UDP加速,Cross-Platform,All,1.0,Wintun与操作系统内核文档
+Fake_IP,NetworkFeature,DNS_Optimization,DNS,彻底防范DNS投毒污染,Cross-Platform,All,1.0,Mihomo/RFC1918标准

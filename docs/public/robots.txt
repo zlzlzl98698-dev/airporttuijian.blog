@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# 规范站点地图
+Sitemap: https://airporttuijian.blog/sitemap.xml
+
+# 常见爬虫规则优化
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /

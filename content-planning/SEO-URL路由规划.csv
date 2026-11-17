@@ -1,0 +1,71 @@
+ID,Route,FilePath,PageTitle,CanonicalURL,SitemapPriority,ChangeFreq,Status
+01,/,docs/index.md,机场推荐 - 专业中文网络工具与科学上网知识库,https://airporttuijian.blog/,1.0,daily,Active
+02,/airport/,docs/airport/index.md,2026 机场推荐与选购指南总览,https://airporttuijian.blog/airport/,0.9,weekly,Active
+03,/airport/recommend/,docs/airport/recommend/index.md,2026 机场推荐精选：综合实力与稳定专线指南,https://airporttuijian.blog/airport/recommend/,0.9,weekly,Active
+04,/airport/rankings/,docs/airport/rankings/index.md,2026 机场排行榜：综合性能与稳定性榜单,https://airporttuijian.blog/airport/rankings/,0.9,weekly,Active
+05,/airport/budget/,docs/airport/budget/index.md,高性价比机场选型指南：月均 8-20 元专线推荐,https://airporttuijian.blog/airport/budget/,0.8,weekly,Active
+06,/airport/stable/,docs/airport/stable/index.md,稳定抗封锁专线机场推荐：晚高峰 0 丢包方案,https://airporttuijian.blog/airport/stable/,0.8,weekly,Active
+07,/airport/cheap/,docs/airport/cheap/index.md,便宜机场避坑防失联指南：5-10 元方案盘点,https://airporttuijian.blog/airport/cheap/,0.8,weekly,Active
+08,/airport/free/,docs/airport/free/index.md,免费梯子与公共节点陷阱警示,https://airporttuijian.blog/airport/free/,0.7,monthly,Active
+09,/airport/basics/,docs/airport/basics/index.md,科学上网底层网络基础：原理与协议科普,https://airporttuijian.blog/airport/basics/,0.7,monthly,Active
+10,/airport/stable/iepl-vs-iplc,docs/airport/stable/iepl-vs-iplc.md,IEPL 专线与 IPLC 专线深度对比：技术差异与选型建议,https://airporttuijian.blog/airport/stable/iepl-vs-iplc,0.8,monthly,Active
+11,/airport/recommend/streaming-nodes,docs/airport/recommend/streaming-nodes.md,海外流媒体节点选型指南：Netflix/Disney+ 4K 畅看,https://airporttuijian.blog/airport/recommend/streaming-nodes,0.8,monthly,Active
+12,/airport/stable/ai-unlock-guide,docs/airport/stable/ai-unlock-guide.md,ChatGPT 与 Claude 原生 IP 解锁指南,https://airporttuijian.blog/airport/stable/ai-unlock-guide,0.8,monthly,Active
+13,/airport/budget/monthly-vs-yearly,docs/airport/budget/monthly-vs-yearly.md,月付与年付深度对比：如何防范机场跑路？,https://airporttuijian.blog/airport/budget/monthly-vs-yearly,0.8,monthly,Active
+14,/vpn/,docs/vpn/index.md,VPN 与加速器知识库总览,https://airporttuijian.blog/vpn/,0.9,weekly,Active
+15,/vpn/recommend/,docs/vpn/recommend/index.md,2026 翻墙 VPN 推荐指南：在大陆境内真实可用选型,https://airporttuijian.blog/vpn/recommend/,0.9,weekly,Active
+16,/vpn/free/,docs/vpn/free/index.md,免费 VPN 风险警示与内幕揭秘,https://airporttuijian.blog/vpn/free/,0.7,monthly,Active
+17,/vpn/mobile/,docs/vpn/mobile/index.md,手机端 VPN 与移动网络加速选型指南,https://airporttuijian.blog/vpn/mobile/,0.8,weekly,Active
+18,/vpn/reviews/,docs/vpn/reviews/index.md,主流 VPN 软件与加速工具客观评测,https://airporttuijian.blog/vpn/reviews/,0.8,weekly,Active
+19,/vpn/accelerator/,docs/vpn/accelerator/index.md,跨境与游戏加速器深度解析,https://airporttuijian.blog/vpn/accelerator/,0.7,monthly,Active
+20,/vpn/comparison/,docs/vpn/comparison/index.md,网络加速工具横向对比与选型决策,https://airporttuijian.blog/vpn/comparison/,0.8,monthly,Active
+21,/vpn/best/,docs/vpn/best/index.md,2026 好用的翻墙与网络加速工具合集,https://airporttuijian.blog/vpn/best/,0.8,weekly,Active
+22,/vpn/comparison/vpn-vs-airport,docs/vpn/comparison/vpn-vs-airport.md,传统 VPN 与现代机场代理深度差异剖析,https://airporttuijian.blog/vpn/comparison/vpn-vs-airport,0.7,monthly,Active
+23,/vpn/recommend/cross-border-office,docs/vpn/recommend/cross-border-office.md,外贸与跨境电商出海网络搭建指南,https://airporttuijian.blog/vpn/recommend/cross-border-office,0.8,monthly,Active
+24,/clash/,docs/clash/index.md,Clash 客户端知识库中心总览,https://airporttuijian.blog/clash/,0.9,weekly,Active
+25,/clash/recommend/,docs/clash/recommend/index.md,2026 优质 Clash 客户端推荐与横评,https://airporttuijian.blog/clash/recommend/,0.8,weekly,Active
+26,/clash/verge/,docs/clash/verge/index.md,Clash Verge Rev 完整使用指南与核心配置,https://airporttuijian.blog/clash/verge/,0.9,weekly,Active
+27,/clash/download/,docs/clash/download/index.md,Clash Verge Rev 官方安装包安全下载指南,https://airporttuijian.blog/clash/download/,0.9,weekly,Active
+28,/clash/subscription/,docs/clash/subscription/index.md,Clash 订阅链接导入、转换与更新排错,https://airporttuijian.blog/clash/subscription/,0.8,monthly,Active
+29,/clash/meta/,docs/clash/meta/index.md,Clash Meta（Mihomo）内核深度解析,https://airporttuijian.blog/clash/meta/,0.8,monthly,Active
+30,/clash/tutorial/,docs/clash/tutorial/index.md,全平台 Clash 图文使用教程,https://airporttuijian.blog/clash/tutorial/,0.9,weekly,Active
+31,/clash/troubleshooting/,docs/clash/troubleshooting/index.md,Clash 节点全部超时或无法联网？10 大常见故障排查,https://airporttuijian.blog/clash/troubleshooting/,0.9,weekly,Active
+32,/clash/tutorial/tun-mode-guide,docs/clash/tutorial/tun-mode-guide.md,TUN 虚拟网卡模式实战指南：接管整机所有流量,https://airporttuijian.blog/clash/tutorial/tun-mode-guide,0.8,monthly,Active
+33,/clash/meta/custom-rules,docs/clash/meta/custom-rules.md,Clash 自定义分流规则编写指南,https://airporttuijian.blog/clash/meta/custom-rules,0.7,monthly,Active
+34,/clash/troubleshooting/dns-leak-fix,docs/clash/troubleshooting/dns-leak-fix.md,DNS 泄漏检测与防污染配置实战,https://airporttuijian.blog/clash/troubleshooting/dns-leak-fix,0.7,monthly,Active
+35,/resources/,docs/resources/index.md,资源与情报中心总览,https://airporttuijian.blog/resources/,0.8,weekly,Active
+36,/resources/free-nodes/,docs/resources/free-nodes/index.md,免费公共节点合集与安全使用建议,https://airporttuijian.blog/resources/free-nodes/,0.7,monthly,Active
+37,/resources/run-warning/,docs/resources/run-warning/index.md,机场跑路预警雷达与防坑手册,https://airporttuijian.blog/resources/run-warning/,0.8,weekly,Active
+38,/resources/faq/,docs/resources/faq/index.md,科学上网与机场使用高频问答（FAQ 百科）,https://airporttuijian.blog/resources/faq/,0.8,monthly,Active
+39,/resources/risk-intel/,docs/resources/risk-intel/index.md,跨境网络风险情报与敏感时期应对,https://airporttuijian.blog/resources/risk-intel/,0.8,weekly,Active
+40,/resources/node-check/,docs/resources/node-check/index.md,节点测速与连通性自测实战,https://airporttuijian.blog/resources/node-check/,0.7,monthly,Active
+41,/resources/sub-issues/,docs/resources/sub-issues/index.md,机场订阅链接更新失败排错指南,https://airporttuijian.blog/resources/sub-issues/,0.8,monthly,Active
+42,/resources/beginner/,docs/resources/beginner/index.md,零基础科学上网新手指南：防踩坑与上手百科,https://airporttuijian.blog/resources/beginner/,0.8,monthly,Active
+43,/resources/run-warning/scam-airport-features,docs/resources/run-warning/scam-airport-features.md,识别虚假跑路机场的 5 大特征：圈钱套路深度拆解,https://airporttuijian.blog/resources/run-warning/scam-airport-features,0.7,monthly,Active
+44,/resources/risk-intel/subscription-security,docs/resources/risk-intel/subscription-security.md,机场订阅链接安全保护实战：防盗刷与防泄露,https://airporttuijian.blog/resources/risk-intel/subscription-security,0.7,monthly,Active
+45,/brands/,docs/brands/index.md,31家机场品牌数据库与评测选型,https://airporttuijian.blog/brands/,0.9,weekly,Active
+46,/reviews/,docs/reviews/index.md,机场品牌深度评测中心,https://airporttuijian.blog/reviews/,0.9,weekly,Active
+47,/reviews/guangsuyun,docs/reviews/guangsuyun.md,光速云深度评测与使用指南（2026 专线机场实测报告）,https://airporttuijian.blog/reviews/guangsuyun,1.0,weekly,Active
+48,/reviews/muguang,docs/reviews/muguang.md,暮光加速深度评测：BGP 智能调度与多设备专线实测,https://airporttuijian.blog/reviews/muguang,0.8,monthly,Active
+49,/reviews/feimao,docs/reviews/feimao.md,飞猫云深度评测：专属客户端免配置体验,https://airporttuijian.blog/reviews/feimao,0.8,monthly,Active
+50,/reviews/weifeng,docs/reviews/weifeng.md,微风网络深度评测：IEPL 专线 + VLESS 高性价比方案,https://airporttuijian.blog/reviews/weifeng,0.8,monthly,Active
+51,/reviews/dalaoyun,docs/reviews/dalaoyun.md,大佬云深度评测：5.6 元/月极限平价方案,https://airporttuijian.blog/reviews/dalaoyun,0.8,monthly,Active
+52,/reviews/xingdaomeng,docs/reviews/xingdaomeng.md,星岛梦深度评测：2020 老牌 IEPL 专线实测,https://airporttuijian.blog/reviews/xingdaomeng,0.8,monthly,Active
+53,/reviews/ermao,docs/reviews/ermao.md,二猫云深度评测：全线 IEPL 物理专线方案,https://airporttuijian.blog/reviews/ermao,0.8,monthly,Active
+54,/reviews/wuyou,docs/reviews/wuyou.md,无忧链接深度评测：高性价比无倍率方案,https://airporttuijian.blog/reviews/wuyou,0.8,monthly,Active
+55,/reviews/weitu,docs/reviews/weitu.md,唯兔云深度评测：IPLC 专线与全场景解锁,https://airporttuijian.blog/reviews/weitu,0.8,monthly,Active
+56,/reviews/firefly,docs/reviews/firefly.md,Firefly 萤火虫深度评测：原生 IPLC 纯专线,https://airporttuijian.blog/reviews/firefly,0.8,monthly,Active
+57,/reviews/tiziyun,docs/reviews/tiziyun.md,梯子云深度评测：双模客户端新秀方案,https://airporttuijian.blog/reviews/tiziyun,0.8,monthly,Active
+58,/reviews/yinxingren,docs/reviews/yinxingren.md,隐形人深度评测：企业级 IPLC 专线方案,https://airporttuijian.blog/reviews/yinxingren,0.8,monthly,Active
+59,/comparisons/,docs/comparisons/index.md,机场与翻墙工具横向对比分析中心,https://airporttuijian.blog/comparisons/,0.8,monthly,Active
+60,/comparisons/guangsuyun-vs-feimao,docs/comparisons/guangsuyun-vs-feimao.md,光速云 vs 飞猫云深度对比：旗舰专线还是新手极简 App？,https://airporttuijian.blog/comparisons/guangsuyun-vs-feimao,0.8,monthly,Active
+61,/comparisons/iepl-vs-iplc,docs/comparisons/iepl-vs-iplc.md,IEPL 专线对比 IPLC 专线：出海专线选型指南,https://airporttuijian.blog/comparisons/iepl-vs-iplc,0.8,monthly,Active
+62,/comparisons/budget-airports-comparison,docs/comparisons/budget-airports-comparison.md,5-10 元平价便宜机场横向对比,https://airporttuijian.blog/comparisons/budget-airports-comparison,0.8,monthly,Active
+63,/clients/,docs/clients/index.md,跨平台代理客户端知识中心大全,https://airporttuijian.blog/clients/,0.8,monthly,Active
+64,/clients/windows,docs/clients/windows.md,Windows 电脑代理客户端推荐与配置指南,https://airporttuijian.blog/clients/windows,0.8,monthly,Active
+65,/clients/android,docs/clients/android.md,Android 安卓手机代理客户端推荐与指南,https://airporttuijian.blog/clients/android,0.8,monthly,Active
+66,/clients/ios,docs/clients/ios.md,iOS 苹果手机 / iPad 代理客户端推荐与选型,https://airporttuijian.blog/clients/ios,0.8,monthly,Active
+67,/clients/macos,docs/clients/macos.md,macOS 苹果电脑代理客户端指南,https://airporttuijian.blog/clients/macos,0.8,monthly,Active
+68,/clients/linux,docs/clients/linux.md,Linux 客户端与透明代理配置指南,https://airporttuijian.blog/clients/linux,0.8,monthly,Active
+69,/clients/router,docs/clients/router.md,OpenWrt 软路由透明代理配置指南,https://airporttuijian.blog/clients/router,0.8,monthly,Active
+70,/404,docs/404.md,404 - 页面未找到,https://airporttuijian.blog/404,0.1,yearly,Excluded

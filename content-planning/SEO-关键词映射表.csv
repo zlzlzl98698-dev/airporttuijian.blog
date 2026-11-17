@@ -1,0 +1,34 @@
+ID,URL,核心关键词,次级关键词,搜索意图(Intent),用户决策阶段,对应专题,所属集群
+1,/airport/recommend/,机场推荐,2026机场推荐;稳定机场推荐,Commercial Investigation,考虑阶段,机场推荐,综合专线精选
+2,/airport/rankings/,机场排行,机场排行榜;梯子排行;科学上网排行,Informational,调查阶段,机场排行,延迟测速天梯榜
+3,/airport/budget/,性价比机场,高性价比梯子;便宜专线机场,Commercial,决策阶段,性价比机场,学生党平价专线
+4,/airport/stable/,稳定机场,IEPL专线机场;晚高峰不卡梯子,Commercial,决策阶段,稳定机场,IEPL架构集群
+5,/airport/cheap/,便宜机场,5元机场;平价梯子;便宜机场避坑,Informational / Commercial,评估阶段,便宜机场,极限平价集群
+6,/airport/free/,免费梯子,免费VPN风险;免费翻墙软件;白嫖节点,Informational,认知阶段,免费梯子,免费白嫖风险辨识
+7,/airport/basics/,科学上网基础,翻墙原理;代理协议;VLESS与Trojan,Informational,认知阶段,科学上网,代理底层协议
+8,/vpn/recommend/,VPN推荐,翻墙VPN;大陆可用VPN;VPN软件推荐,Commercial Investigation,考虑阶段,VPN推荐,商业VPN实测
+9,/vpn/free/,免费VPN,免费翻墙VPN;免费加速器安全吗,Informational,认知阶段,免费VPN,恶意软件黑名单
+10,/vpn/mobile/,手机VPN,苹果手机VPN;安卓VPN;手机翻墙软件,Navigational / Transactional,行动阶段,手机VPN,苹果iOS移动加速
+11,/vpn/reviews/,VPN软件评测,商业VPN评测;海外VPN实测,Informational,调查阶段,VPN软件评测,连接率评测
+12,/vpn/accelerator/,VPN加速器,游戏加速器;跨境加速器;Steam加速,Informational,评估阶段,VPN加速器,跨国外服游戏加速
+13,/vpn/comparison/,加速器对比,VPN与机场区别;翻墙工具选型,Informational,决策阶段,加速器对比,技术原理对比
+14,/vpn/best/,好用的VPN,好用梯子;外贸加速器,Commercial,决策阶段,好用的VPN,生产力工具合集
+15,/clash/recommend/,Clash推荐,Clash客户端推荐;Clash软件对比,Navigational,决策阶段,Clash推荐,开源客户端生态
+16,/clash/verge/,Clash Verge,Clash Verge Rev;Clash设置教程,Informational / Navigational,使用阶段,Clash Verge,Verge基础配置
+17,/clash/download/,Clash Verge下载,Clash下载;Clash官方下载,Transactional,行动阶段,Clash Verge下载,官方源下载
+18,/clash/subscription/,Clash订阅,订阅链接导入;订阅转换;Subconverter,Informational,使用阶段,Clash Verge订阅,转换与更新
+19,/clash/meta/,Clash Meta,Mihomo内核;VLESS Reality;Hysteria 2,Informational,探索阶段,Clash Meta,新一代协议支持
+20,/clash/tutorial/,Clash使用教程,Clash怎么用;翻墙教程图文,Informational,上手阶段,Clash使用教程,全平台图文教程
+21,/clash/troubleshooting/,Clash节点超时,Clash连不上;7890端口冲突,Problem Solving,故障阶段,Clash故障排查,端口与证书排错
+22,/resources/free-nodes/,免费节点,公共白嫖节点;每日免费节点,Informational,应急阶段,免费节点,公共每日节点维护
+23,/resources/run-warning/,机场跑路,跑路预警;机场黑名单;失联机场,Security Advisory,风险防范,跑路预警,黑榜公示
+24,/resources/faq/,机场FAQ,科学上网问答;翻墙常见问题,Informational,各阶段通用,机场FAQ,网络疑难解答
+25,/resources/risk-intel/,机场风险情报,敏感时期翻墙;封锁态势,Informational,各阶段通用,机场风险情报,大封锁应对
+26,/resources/node-check/,节点检测,节点测速;真实延迟测试,Informational / Utility,评估阶段,节点检测,测速标准SOP
+27,/resources/sub-issues/,订阅更新失败,订阅404;订阅打不开,Problem Solving,故障阶段,订阅问题,域名与解析修复
+28,/resources/beginner/,新手帮助,翻墙入门;零基础梯子科普,Informational,新手认知,新手帮助,采购防坑指南
+29,/reviews/guangsuyun,光速云,光速云评测;光速云优惠码;光速云怎么样,Commercial / Transactional,最终转化,品牌评测,主推品牌评测
+30,/reviews/feimao,飞猫云,飞猫云评测;飞猫云免配置客户端,Commercial / Transactional,最终转化,品牌评测,新手一键品牌
+31,/reviews/weifeng,微风网络,微风网络评测;微风网络优惠码,Commercial / Transactional,最终转化,品牌评测,性价比专线品牌
+32,/reviews/muguang,暮光加速,暮光加速评测;暮光加速优惠码,Commercial / Transactional,最终转化,品牌评测,多设备协同品牌
+33,/brands/,机场品牌数据库,机场品牌大全;专线机场列表,Commercial Investigation,探索阶段,品牌数据库,全品牌全景索引

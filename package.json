@@ -1,0 +1,28 @@
+{
+  "name": "airporttuijian.blog",
+  "version": "1.0.0",
+  "description": "专业中文网络工具与机场评测知识库",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "check": "node scripts/verify-project.js"
+  },
+  "keywords": [
+    "机场推荐",
+    "Clash",
+    "VPN",
+    "Mihomo",
+    "网络工具",
+    "科学上网"
+  ],
+  "author": "airporttuijian.blog",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.45"
+  }
+}

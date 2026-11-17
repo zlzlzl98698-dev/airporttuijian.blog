@@ -1,0 +1,16 @@
+Question_ID,Question_Text,Category,Intent,Direct_Answer_Summary,Target_URL,Priority
+Q01,为什么Clash测速显示Timeout节点全部超时？,Troubleshooting,Problem Solving,90%是由于操作系统本地时间与网络时间偏差超过60秒导致TLS握手失败，其次是端口占用或流量用尽。,/clash/troubleshooting/,P0
+Q02,什么是IEPL专线？和普通翻墙中转有什么区别？,Technology,Informational,IEPL采用物理内网光纤直连，数据包完全不经过公网GFW网关，晚高峰0丢包且敏感期不跳ping。,/airport/stable/iepl-vs-iplc,P0
+Q03,ChatGPT提示Access Denied或报错如何解决？,AI,Problem Solving,香港节点不支持访问，请切换至标有原生住宅或AI专线的新加坡/日本/美国节点，并开启无痕浏览清除Cookie。,/airport/stable/ai-unlock-guide,P0
+Q04,电脑关机或重启后为什么所有国内网页都打不开了？,Troubleshooting,Problem Solving,Clash未正常清理注册表系统代理。在Windows设置中搜索“代理”，手动关闭“使用代理服务器”即可恢复。,/clash/troubleshooting/,P0
+Q05,为什么我买的机场看Netflix只能看自制剧？,Streaming,Informational,节点IP被流媒体识别为机房代理IP。需要选择具备原生住宅IP或流媒体解锁优化的香港/新加坡原生节点。,/airport/recommend/streaming-nodes,P0
+Q06,光速云怎么样？值得长期买年付吗？,Brand Review,Commercial,光速云2020年运营至今，采用IEPL双专线架构，延迟低至22ms，提供147元永久包，老牌信誉可靠。,/reviews/guangsuyun,P0
+Q07,新手第一次用Clash怎么导入机场订阅？,Tutorial,How-To,在机场后台复制Clash订阅链接，打开Clash Verge【订阅】粘贴导入，在【代理】选香港节点，打开【系统代理】开关。,/clash/tutorial/,P0
+Q08,Clash的TUN模式有什么用？玩游戏需要开吗？,Technology,Informational,TUN模式在底层建立虚拟网卡，接管命令行终端、外服网游等不遵循系统代理的全部流量，联机游戏强烈建议开启。,/clash/tutorial/tun-mode-guide,P0
+Q09,免费梯子和免费VPN真的能用吗？安全吗？,Security,Informational,免费服务大多通过贩卖浏览隐私、植入挖矿代码或将用户设备变肉鸡牟利，极易导致账号密码泄露，坚决不推荐。,/airport/free/,P0
+Q10,买机场应该按月付还是按年付？,Billing,Decision,初次使用任何新品牌务必坚持月付测试晚高峰3-5天；只有运营3年以上且口碑稳定的老牌，才建议年付享受折扣。,/airport/budget/monthly-vs-yearly,P0
+Q11,如何识别可能会跑路的虚假机场？,Security,Security Advisory,开业不足半年就推超低价长年付、TG群全员禁言、无月付选项、使用个人收款码是跑路盘的四大铁律。,/resources/run-warning/scam-airport-features,P0
+Q12,苹果手机iPhone怎么下载小火箭Shadowrocket？,Client,How-To,国区App Store已下架，需要注册或登录一个美区Apple ID，在美区应用商店搜索并购买下载。,/clients/ios,P0
+Q13,为什么开启代理后在百度查IP依然显示国内？,Technology,Informational,因为开启了规则分流模式（Rule）。国内网站被规则自动识别走直连通道，避免了国内服务变卡或判定异地登录。,/resources/faq/,P0
+Q14,机场订阅链接更新失败报错404怎么办？,Troubleshooting,Problem Solving,先临时关闭系统代理，避免死锁；若浏览器直接访问订阅仍404，说明商家更换了订阅域名，去后台重新复制。,/resources/sub-issues/,P0
+Q15,外贸跨境电商怎么防止亚马逊和PayPal封号关联？,Ecommerce,Commercial,不要频繁更换不同国家的公用节点，建议使用固定独享原生住宅IP（如光速云定制版），并配合防关联指纹浏览器。,/vpn/recommend/cross-border-office,P0

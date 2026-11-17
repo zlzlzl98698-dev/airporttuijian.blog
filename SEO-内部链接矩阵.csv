@@ -1,0 +1,43 @@
+Source_Page,Target_Page,Anchor_Text,Link_Relationship,Page_Type
+/,/airport/recommend/,2026 机场推荐精选,首页到核心专题,Pillar_Link
+/,/clash/tutorial/,Clash 零基础全套教程,首页到核心教程,Tutorial_Link
+/,/brands/,31家品牌数据库,首页到数据库主页,Database_Link
+/,/reviews/guangsuyun,查看光速云深度实测,首页到主推评测,Review_Link
+/airport/,/airport/recommend/,机场精选推荐,上游专题到二级,Category_Link
+/airport/,/airport/rankings/,2026 综合排行榜,上游专题到二级,Category_Link
+/airport/,/airport/budget/,高性价比机场选型,上游专题到二级,Category_Link
+/airport/,/airport/stable/,稳定晚高峰专线,上游专题到二级,Category_Link
+/airport/,/airport/cheap/,平价便宜梯子测评,上游专题到二级,Category_Link
+/airport/,/airport/free/,免费梯子与公共节点风险,上游专题到二级,Category_Link
+/airport/,/airport/basics/,科学上网底层网络基础,上游专题到二级,Category_Link
+/airport/,/airport/stable/iepl-vs-iplc,IEPL 专线与 IPLC 专线有何区别？,专题到集群教程,Tutorial_Link
+/airport/,/airport/recommend/streaming-nodes,海外 4K 流媒体节点如何挑选？,专题到集群教程,Tutorial_Link
+/airport/,/airport/stable/ai-unlock-guide,ChatGPT 与 Claude 原生住宅 IP 解锁指南,专题到集群教程,Tutorial_Link
+/airport/,/airport/budget/monthly-vs-yearly,月付与年付深度对比：如何防范跑路？,专题到集群教程,Tutorial_Link
+/airport/recommend/,/reviews/guangsuyun,查阅光速云完整实测评测报告,精选到品牌评测,Conversion_Link
+/airport/recommend/,/reviews/muguang,查阅暮光加速深度评测,精选到品牌评测,Review_Link
+/airport/recommend/,/reviews/feimao,查阅飞猫云新手评测,精选到品牌评测,Review_Link
+/airport/recommend/,/reviews/weifeng,查阅微风网络深度评测,精选到品牌评测,Review_Link
+/airport/stable/,/airport/stable/iepl-vs-iplc,IEPL 专线与 IPLC 专线全面技术对比,稳定专题到对比,Internal_Knowledge
+/airport/stable/,/reviews/guangsuyun,查看光速云评测报告,稳定专题到主推,Review_Link
+/airport/stable/,/reviews/muguang,查看暮光加速评测报告,稳定专题到评测,Review_Link
+/airport/stable/,/reviews/ermao,查看二猫云评测报告,稳定专题到评测,Review_Link
+/clash/,/clash/verge/,Clash Verge 核心教程,Clash首页到二级,Category_Link
+/clash/,/clash/download/,官方安装包安全下载,Clash首页到下载,Download_Link
+/clash/,/clash/subscription/,订阅链接转换与导入,Clash首页到二级,Category_Link
+/clash/,/clash/meta/,Clash Meta / Mihomo 新特性,Clash首页到二级,Category_Link
+/clash/,/clash/tutorial/,全平台完整使用教程,Clash首页到教程,Tutorial_Link
+/clash/,/clash/troubleshooting/,节点无法连接故障排查,Clash首页到排错,Troubleshooting_Link
+/clash/verge/,/clash/download/,官方客户端安全下载指南,教程到下载,Download_Link
+/clash/verge/,/clash/tutorial/tun-mode-guide,TUN 虚拟网卡深度实战教程,教程到进阶,Tutorial_Link
+/clash/verge/,/clash/troubleshooting/,节点全部超时无法联网排查手册,教程到排错,Troubleshooting_Link
+/clash/troubleshooting/,/clash/troubleshooting/dns-leak-fix,DNS 泄漏检测与防污染排错 SOP,排错到进阶,Tutorial_Link
+/clash/troubleshooting/,/clash/tutorial/tun-mode-guide,TUN 虚拟网卡深度配置指南,排错到功能,Tutorial_Link
+/reviews/guangsuyun,/clash/verge/,Clash Verge Rev,评测到客户端,Client_Guide
+/reviews/guangsuyun,/airport/stable/iepl-vs-iplc,IEPL专线,评测到知识,Internal_Knowledge
+/reviews/guangsuyun,/brands/,31家品牌数据库,评测到数据库,Database_Link
+/comparisons/guangsuyun-vs-feimao,/reviews/guangsuyun,阅读光速云完整深度实测报告,对比到评测,Review_Link
+/comparisons/guangsuyun-vs-feimao,/reviews/feimao,阅读飞猫云新手体验报告,对比到评测,Review_Link
+/resources/run-warning/,/resources/run-warning/scam-airport-features,如何通过 5 个特征提前识别虚假跑路盘？,预警到指南,Warning_Link
+/resources/run-warning/,/airport/budget/monthly-vs-yearly,月付与年付深度对比：如何防范资金损失？,预警到选型,Billing_Link
+/resources/risk-intel/,/resources/risk-intel/subscription-security,订阅链接泄露危害与全流程隐私安全保护,情报到安全,Security_Link
