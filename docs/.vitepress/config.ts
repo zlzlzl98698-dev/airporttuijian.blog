@@ -17,19 +17,58 @@ export default defineConfig({
 
   // 原生 Sitemap 自动生成系统
   sitemap: {
-    hostname: siteConfig.url
+    hostname: siteConfig.url,
+    transformItems(items) {
+      return items.filter(item => !item.url.includes('404'))
+    }
+  },
+
+  transformHead({ pageData }) {
+    let cleanPath = pageData.relativePath
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, '')
+    if (cleanPath && !cleanPath.endsWith('/') && pageData.relativePath.endsWith('index.md')) {
+      cleanPath += '/'
+    }
+    const canonicalUrl = `${siteConfig.url}/${cleanPath}`.replace(/([^:]\/)\/+/g, '$1')
+
+    const pageTitle = pageData.title ? `${pageData.title} | ${siteConfig.name}` : siteConfig.name
+    const pageDescription = pageData.description || siteConfig.description
+
+    const dynamicTags: [string, Record<string, string>][] = [
+      ['link', { rel: 'canonical', href: canonicalUrl }],
+      ['meta', { property: 'og:url', content: canonicalUrl }],
+      ['meta', { property: 'og:title', content: pageTitle }],
+      ['meta', { property: 'og:description', content: pageDescription }],
+      ['meta', { name: 'twitter:title', content: pageTitle }],
+      ['meta', { name: 'twitter:description', content: pageDescription }]
+    ]
+
+    // 页面修改时间戳（增强搜索引擎新鲜度与 GEO 权重）
+    if (pageData.lastUpdated) {
+      dynamicTags.push(['meta', { property: 'article:modified_time', content: new Date(pageData.lastUpdated).toISOString() }])
+    }
+
+    return dynamicTags as any
   },
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
     ['meta', { name: 'author', content: siteConfig.author }],
-    ['meta', { name: 'robots', content: 'index, follow, max-image-preview:large' }],
+    ['meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }],
     ['meta', { property: 'og:site_name', content: siteConfig.name }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    ['meta', { property: 'og:image', content: `${siteConfig.url}${siteConfig.defaultCover}` }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'theme-color', content: '#2563eb' }]
-  ],
+    ['meta', { name: 'twitter:image', content: `${siteConfig.url}${siteConfig.defaultCover}` }],
+    ['meta', { name: 'theme-color', content: '#2563eb' }],
+    // 搜索引擎站长平台安全验证支持（无硬编码，随环境变量或配置即时生效）
+    ...(siteConfig.verification.google ? [['meta', { name: 'google-site-verification', content: siteConfig.verification.google }]] : []),
+    ...(siteConfig.verification.bing ? [['meta', { name: 'msvalidate.01', content: siteConfig.verification.bing }]] : []),
+    ...(siteConfig.verification.shenma ? [['meta', { name: 'shenma-site-verification', content: siteConfig.verification.shenma }]] : []),
+    ...(siteConfig.verification.baidu ? [['meta', { name: 'baidu-site-verification', content: siteConfig.verification.baidu }]] : [])
+  ] as any,
 
   themeConfig: {
     logo: '/logo.svg',

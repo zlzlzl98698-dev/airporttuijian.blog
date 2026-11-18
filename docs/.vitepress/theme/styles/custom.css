@@ -161,12 +161,17 @@
 
 /* 文档区内嵌天文台与数据组件排版保护：严格限制最大宽度，杜绝与右侧目录(TOC)发生重叠 */
 .vp-doc .topology-panel,
+.vp-doc .infra-snapshot,
 .vp-doc .observatory-panel,
 .vp-doc .pricing-table-container,
-.vp-doc .brand-cta-block {
+.vp-doc .streaming-matrix,
+.vp-doc .brand-cta-block,
+.vp-doc .brand-recommendation-card {
   max-width: 100% !important;
+  width: 100% !important;
   box-sizing: border-box !important;
-  overflow-x: auto;
+  overflow: hidden !important;
+  contain: paint !important;
 }
 
 /* 全局表格防溢出保护：在所有视口（包括桌面端三栏布局与移动端）下，超宽表格一律在区域内平滑滚动，杜绝与右侧目录(TOC)发生任何碰撞与页面横向滚动 */

@@ -19,6 +19,10 @@ ErrorDocument 404 /404.html
   RewriteCond %{HTTPS} !=on
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
+  # 3.1 统一规范化跳转至正式主域名（去除 www 前缀）
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
   # 4. VitePress cleanUrls 路由映射支持
   # 如果请求的是实际存在的文件或目录，直接提供服务
   RewriteCond %{REQUEST_FILENAME} -f [OR]

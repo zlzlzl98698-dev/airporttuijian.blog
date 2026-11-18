@@ -60,6 +60,23 @@ import { siteConfig } from '../../data/site'
       </div>
     </div>
 
+    <!-- 底部信任信标与 E-E-A-T 权威资质 -->
+    <div class="footer-trust-bar">
+      <div class="trust-links">
+        <a href="/about/">关于我们</a>
+        <span class="sep">·</span>
+        <a href="/methodology/">评测方法论</a>
+        <span class="sep">·</span>
+        <a href="/disclaimer/">免责与商业推广披露</a>
+        <span class="sep">·</span>
+        <a href="/privacy/">隐私政策</a>
+        <span class="sep">·</span>
+        <a href="/terms/">服务条款</a>
+        <span class="sep">·</span>
+        <a href="/contact/">联系与勘误</a>
+      </div>
+    </div>
+
     <!-- 底部版权与免责声明 -->
     <div class="footer-bottom">
       <div class="copyright">
@@ -73,6 +90,55 @@ import { siteConfig } from '../../data/site'
 </template>
 
 <style scoped>
+.footer-trust-bar {
+  max-width: 1200px;
+  margin: 28px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trust-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.trust-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.trust-links a:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.trust-links .sep {
+  color: #475569;
+  font-size: 12px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding-top: 16px;
+  border-top: 1px dashed #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: #64748b;
+}
 .custom-site-footer {
   background-color: #0f172a;
   color: #94a3b8;
@@ -176,20 +242,6 @@ import { siteConfig } from '../../data/site'
 .col-links a:hover {
   color: #38bdf8;
   text-decoration: underline;
-}
-
-.footer-bottom {
-  max-width: 1200px;
-  margin: 36px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid #1e293b;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12px;
-  color: #64748b;
 }
 
 .legal-statement {

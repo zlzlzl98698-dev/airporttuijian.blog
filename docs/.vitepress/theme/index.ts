@@ -25,8 +25,8 @@ export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      // 可以在此处插入全局插槽，例如文档底部
-      'doc-after': () => h(CustomFooter)
+      // 全局通栏页脚：挂载在 layout-bottom 保证 100% 宽度通栏且在所有页面（包括首页与文档）统一渲染
+      'layout-bottom': () => h(CustomFooter)
     })
   },
   enhanceApp({ app }) {

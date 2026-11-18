@@ -1,16 +1,33 @@
 User-agent: *
 Allow: /
 
-# 规范站点地图
+# 规范站点地图 (Sitemap)
 Sitemap: https://airporttuijian.blog/sitemap.xml
 
-# 常见爬虫规则优化
+# 主流国际搜索引擎爬虫允许访问
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# 中文搜索引擎爬虫优化兼容 (神马/百度/头条/360)
+User-agent: yisouspider
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+# 生成式 AI 检索与引用爬虫 (GEO 搜索引擎优化)
 User-agent: GPTBot
 Allow: /
 

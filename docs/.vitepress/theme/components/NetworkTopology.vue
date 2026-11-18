@@ -23,58 +23,61 @@ const props = withDefaults(
       <div class="badge">Network Path Observatory</div>
     </div>
 
-    <div class="topology-canvas">
-      <!-- 阶段 1：用户终端 -->
-      <div class="topo-node user-node">
-        <div class="node-icon">💻</div>
-        <div class="node-title">用户终端设备</div>
-        <div class="node-sub">PC / 手机 / 软路由</div>
-      </div>
-
-      <!-- 连接 1 -->
-      <div class="topo-connector">
-        <div class="line-dot"></div>
-        <div class="connector-label">{{ protocol }} 加密</div>
-      </div>
-
-      <!-- 阶段 2：国内中转入口 -->
-      <div class="topo-node ingress-node">
-        <div class="node-icon">🛡️</div>
-        <div class="node-title">国内 BGP 入口</div>
-        <div class="node-sub">智能多线接入 / 隐藏源IP</div>
-        <div class="pill-tag">BGP Multi-Line</div>
-      </div>
-
-      <!-- 专线核心通道 -->
-      <div class="topo-connector tunnel-connector">
-        <div class="tunnel-pipe">
-          <div class="pulse-flow"></div>
+    <!-- 滚动保护容器：确保内部即使超宽也在卡片内部平滑滚动，杜绝与右侧目录重叠 -->
+    <div class="topology-scroll-container">
+      <div class="topology-canvas">
+        <!-- 阶段 1：用户终端 -->
+        <div class="topo-node user-node">
+          <div class="node-icon">💻</div>
+          <div class="node-title">用户终端设备</div>
+          <div class="node-sub">PC / 手机 / 软路由</div>
         </div>
-        <div class="tunnel-label">
-          <span class="tunnel-highlight">{{ lineType }}</span>
-          <span class="tunnel-note">物理专网直连 · 不经公网GFW · 0% 丢包</span>
+
+        <!-- 连接 1 -->
+        <div class="topo-connector">
+          <div class="connector-line"></div>
+          <div class="connector-label">{{ protocol }} 加密</div>
         </div>
-      </div>
 
-      <!-- 阶段 3：海外落地节点 -->
-      <div class="topo-node egress-node">
-        <div class="node-icon">🌐</div>
-        <div class="node-title">海外落地出口</div>
-        <div class="node-sub">香港 / 日本 / 新加坡 / 美国</div>
-        <div class="pill-tag">原生住宅 / 机房原生 IP</div>
-      </div>
+        <!-- 阶段 2：国内中转入口 -->
+        <div class="topo-node ingress-node">
+          <div class="node-icon">🛡️</div>
+          <div class="node-title">国内 BGP 入口</div>
+          <div class="node-sub">智能多线接入 / 隐藏源IP</div>
+          <div class="pill-tag">BGP Multi-Line</div>
+        </div>
 
-      <!-- 连接 3 -->
-      <div class="topo-connector">
-        <div class="line-dot"></div>
-        <div class="connector-label">高速转发</div>
-      </div>
+        <!-- 专线核心通道 -->
+        <div class="topo-connector tunnel-connector">
+          <div class="tunnel-pipe">
+            <div class="pulse-flow"></div>
+          </div>
+          <div class="tunnel-label">
+            <span class="tunnel-highlight">{{ lineType }}</span>
+            <span class="tunnel-note">物理专网直连 · 不经公网GFW · 0% 丢包</span>
+          </div>
+        </div>
 
-      <!-- 阶段 4：目标服务 -->
-      <div class="topo-node target-node">
-        <div class="node-icon">🚀</div>
-        <div class="node-title">目标互联网络</div>
-        <div class="node-sub">ChatGPT / Netflix / 跨境办公</div>
+        <!-- 阶段 3：海外落地节点 -->
+        <div class="topo-node egress-node">
+          <div class="node-icon">🌐</div>
+          <div class="node-title">海外落地出口</div>
+          <div class="node-sub">香港 / 日本 / 新加坡 / 美国</div>
+          <div class="pill-tag">原生住宅 / 机房原生 IP</div>
+        </div>
+
+        <!-- 连接 3 -->
+        <div class="topo-connector">
+          <div class="connector-line"></div>
+          <div class="connector-label">高速转发</div>
+        </div>
+
+        <!-- 阶段 4：目标服务 -->
+        <div class="topo-node target-node">
+          <div class="node-icon">🚀</div>
+          <div class="node-title">目标互联网络</div>
+          <div class="node-sub">ChatGPT / Netflix / 跨境办公</div>
+        </div>
       </div>
     </div>
 
@@ -90,7 +93,9 @@ const props = withDefaults(
 
 <style scoped>
 .topology-panel {
-  container-type: inline-size;
+  width: 100%;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
   background-color: var(--obs-bg);
   border: 1px solid var(--obs-border);
   border-radius: 10px;
@@ -98,9 +103,9 @@ const props = withDefaults(
   color: var(--obs-text-bright);
   margin: 1.8rem 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: auto;
+  overflow: hidden !important;
+  contain: paint !important;
+  position: relative;
 }
 
 .topology-header {
@@ -134,6 +139,36 @@ const props = withDefaults(
   border-radius: 4px;
 }
 
+/* 核心滚动容器：支持横向自适应与安全约束 */
+.topology-scroll-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #090d16;
+}
+
+.topology-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.topology-scroll-container::-webkit-scrollbar-track {
+  background: #090d16;
+  border-radius: 3px;
+}
+
+.topology-scroll-container::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+.topology-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
 .topology-canvas {
   display: flex;
   flex-direction: column;
@@ -144,11 +179,13 @@ const props = withDefaults(
   box-sizing: border-box;
 }
 
-@container (min-width: 780px) {
+/* 视口充足时保持清晰的自适应布局 */
+@media (min-width: 960px) {
   .topology-canvas {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    min-width: 780px;
   }
 }
 
@@ -165,12 +202,13 @@ const props = withDefaults(
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  flex-shrink: 0;
 }
 
-@container (min-width: 780px) {
+@media (min-width: 960px) {
   .topo-node {
     max-width: 155px;
-    flex-shrink: 0;
+    flex: 1 1 140px;
   }
 }
 
@@ -182,11 +220,13 @@ const props = withDefaults(
   font-size: 13.5px;
   font-weight: 600;
   color: #f8fafc;
+  word-break: keep-all;
 }
 
 .node-sub {
   font-size: 11px;
   color: #94a3b8;
+  line-height: 1.4;
 }
 
 .pill-tag {
@@ -197,6 +237,7 @@ const props = withDefaults(
   padding: 1px 6px;
   border-radius: 9999px;
   margin-top: 4px;
+  white-space: nowrap;
 }
 
 .topo-connector {
@@ -209,17 +250,21 @@ const props = withDefaults(
   flex-shrink: 0;
 }
 
-.line-dot {
+.connector-line {
   width: 2px;
   height: 20px;
   background-color: #334155;
 }
 
-@container (min-width: 780px) {
-  .line-dot {
+@media (min-width: 960px) {
+  .connector-line {
     width: 20px;
     height: 2px;
   }
+}
+
+.connector-label {
+  white-space: nowrap;
 }
 
 .tunnel-connector {
@@ -230,10 +275,10 @@ const props = withDefaults(
   padding: 0 10px;
 }
 
-@container (min-width: 780px) {
+@media (min-width: 960px) {
   .tunnel-connector {
-    min-width: 120px;
-    max-width: 210px;
+    min-width: 130px;
+    max-width: 220px;
   }
 }
 
@@ -274,13 +319,15 @@ const props = withDefaults(
   font-size: 12px;
   font-weight: 600;
   color: #38bdf8;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 
 .tunnel-note {
   font-size: 10px;
   color: #94a3b8;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 
 .topology-footer {

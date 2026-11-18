@@ -4,3 +4,10 @@ docs/.vitepress/cache/
 /.vitepress/
 .DS_Store
 Thumbs.db
+
+# 本地截图与环境变量
+clash_screenshots/
+resources_screenshots/
+.env
+.env.*
+
